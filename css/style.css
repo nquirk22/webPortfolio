@@ -41,7 +41,10 @@ body {
 
 .landing {
   /* background-color: #2C343B; */
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/landingImage.jpg');
+  /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url('../images/landingImageLarge.jpg'); */
+    background: linear-gradient( rgba(44, 52, 59, .5), rgba(44, 52, 59, .5), rgba(44, 52, 59, 1.0) ),
+      url('../images/landingImageLarge.jpg');
   /* background-image: url(../images/landingImage.jpg); */
   background-position: center;
   background-repeat: no-repeat;
@@ -237,7 +240,7 @@ body {
 .projectCards {
   position: relative;
   transform: translateY(50%);
-  
+
   align-items: center;
 }
 
