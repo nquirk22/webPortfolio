@@ -118,57 +118,57 @@ function ScrollHandler(e) {
 
 
 // MASTHEAD ANIMATION----------------------------------------------------
-// var captions = ['Hello',
-//   "I'm a student",
-//   "problem solver",
-//   "software developer"];
-//
-// function type(elt, priorLength, str, next) {
-//   if (elt.innerHTML.length != priorLength + str.length) {
-//     elt.innerHTML += str.charAt(elt.innerHTML.length - priorLength);
-//     setTimeout(type, 150, elt, priorLength, str, next);
-//   } else {
-//     if (next) {
-//       next();
-//     }
-//   }
-// }
-//
-// function erase(elt, toKeep, next) {
-//   let eltLength = elt.innerHTML.length;
-//   if ( eltLength > toKeep ) {
-//     elt.innerHTML = elt.innerHTML.substr(0, eltLength - 1);
-//     setTimeout(erase, 100, elt, toKeep, next);
-//   } else {
-//     if (next) {
-//       next();
-//     }
-//   }
-// }
-//
-// $(document).ready(function() {
-//     var cursorAnimation = function() {
-//         $('#cursor').animate({
-//             opacity: 0
-//         }, 'fast', 'swing').animate({
-//             opacity: 1
-//         }, 'fast', 'swing');
-//     }
-//     interval = setInterval (cursorAnimation, 850);
-//     var eighth = function() {
-//       clearInterval(interval);
-//       document.querySelector('#period').style.width = "1.2vw";
-//       document.querySelector('#period').style.opacity = "1";
-//       document.querySelector('#cursor').style.visibility = "collapse";
-//
-//     };
-//     var seventh = function() {setTimeout(type, 700, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[3], eighth);};// prints [2]
-//     var sixth = function() {setTimeout(erase, 2000, HELLO_ELT, 6, seventh)};// erases [2]
-//     var fifth = function() {setTimeout(type, 700, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[2], sixth);};// prints [2]
-//     var fourth = function() {setTimeout(erase, 2000, HELLO_ELT, 6, fifth)};// erases [1]
-//     var third = function() {setTimeout(type, 700, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[1], fourth);};// prints [1]
-//     var second = function() {setTimeout(erase, 2000, HELLO_ELT, 0, third)};// erases [0]
-//
-//     setTimeout(type, 2250, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[0], second);
-//     // var third = setTimeout(type, 2500, HELLO_ELT, captions[1]);
-// });
+var captions = ['Hello,',
+  "I'm Nathan",
+  "problem solver",
+  "software developer"];
+
+function type(elt, priorLength, str, next) {
+  if (elt.innerHTML.length != priorLength + str.length) {
+    elt.innerHTML += str.charAt(elt.innerHTML.length - priorLength);
+    setTimeout(type, 150, elt, priorLength, str, next);
+  } else {
+    if (next) {
+      next();
+    }
+  }
+}
+
+function erase(elt, toKeep, next) {
+  let eltLength = elt.innerHTML.length;
+  if ( eltLength > toKeep ) {
+    elt.innerHTML = elt.innerHTML.substr(0, eltLength - 1);
+    setTimeout(erase, 100, elt, toKeep, next);
+  } else {
+    if (next) {
+      next();
+    }
+  }
+}
+
+$(document).ready(function() {
+    var cursorAnimation = function() {
+        $('#cursor').animate({
+            opacity: 0
+        }, 'fast', 'swing').animate({
+            opacity: 1
+        }, 'fast', 'swing');
+    }
+    interval = setInterval (cursorAnimation, 850);
+    var period = function() {
+      clearInterval(interval);
+      document.querySelector('#period').style.width = "1vw";
+      document.querySelector('#period').style.opacity = "1";
+      document.querySelector('#cursor').style.visibility = "collapse";
+
+    };
+    // var seventh = function() {setTimeout(type, 700, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[3], period);};// prints [2]
+    // var sixth = function() {setTimeout(erase, 2000, HELLO_ELT, 6, seventh)};// erases [2]
+    // var fifth = function() {setTimeout(type, 700, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[2], sixth);};// prints [2]
+    // var fourth = function() {setTimeout(erase, 2000, HELLO_ELT, 6, fifth)};// erases [1]
+    var third = function() {setTimeout(type, 700, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[1], period);};// prints [1]
+    var second = function() {setTimeout(erase, 2000, HELLO_ELT, 0, third)};// erases [0]
+
+    setTimeout(type, 2250, HELLO_ELT, HELLO_ELT.innerHTML.length, captions[0], second);
+    // var third = setTimeout(type, 2500, HELLO_ELT, captions[1]);
+});
