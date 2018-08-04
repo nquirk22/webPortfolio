@@ -118,7 +118,7 @@ function ScrollHandler(e) {
 
 
 // MASTHEAD ANIMATION----------------------------------------------------
-var captions = ['Hello,',
+var captions = ['Hi,',
   "I'm Nathan",
   "problem solver",
   "software developer"];
