@@ -13,7 +13,9 @@ const DOWN_ARROW = document.querySelector('.arrow');
 // Toggle reveal class on body element, set aria-expanded and screen reader text on TRIGGER:
 function revealMenu() {
   SITE.classList.toggle('reveal');
-  OVERLAY.classList.toggle('obscure');
+  OVERLAY.setAttribute('style', 'visibility: visible;opacity: 1;');
+  // OVERLAY.classList.toggle('obscure');
+  DOWN_ARROW.style.opacity = '0';
   if ( REVEAL.getAttribute('aria-expanded') == 'false' ) {
       REVEAL.setAttribute('aria-expanded', true);
   } else {
@@ -27,7 +29,9 @@ function revealMenu() {
 
 function hideMenu() {
   SITE.classList.toggle('reveal');
-  OVERLAY.classList.toggle('obscure');
+  OVERLAY.setAttribute('style', 'visibility: hidden;opacity: 0;');
+  // OVERLAY.classList.toggle('obscure');
+  DOWN_ARROW.style.opacity = '0.3';
   if ( REVEAL.getAttribute('aria-expanded') == 'false' ) {
       REVEAL.setAttribute('aria-expanded', true);
   } else {
